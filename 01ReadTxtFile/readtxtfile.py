@@ -1,7 +1,6 @@
 # -*- coding: UTF-8 -*-
 #读取配置文件
-from selenium import webdriver
-from time import sleep
+
 
 #读取文件
 with(open("./user_info.txt","r")) as user_file:
