@@ -5,38 +5,14 @@ import codecs
 from itertools import islice
 from xml.dom.minidom import parse
 
-#------------------------------------------------------
-#读取XML文件
-data =  parse("./myxml.xml")
-root = data.documentElement
-print(root.nodeName)
-user_list = root.getElementsByTagName('login')
-user = user_list[0]
-print("账号:" +user.getAttribute("username") + "  密码:" + user.getAttribute("password"))
-#------------------------------------------------------
-
-
 
 #------------------------------------------------------
-# #读取CSV文件
-# data = csv.reader(codecs.open("./mycsv.csv","r","utf_8_sig"))
-# user_list = []
-# for line in islice(data,1,None):
-#     user_list.append(line)
+#读取json文件
+with(open("./myjson.json","r")) as f:
+    data = f.read()
 
-# print(user_list)
-#------------------------------------------------------
-
-
-
-
-#------------------------------------------------------
-# #读取json文件
-# with(open("./myjson.json","r")) as f:
-#     data = f.read()
-
-# user_list = json.loads(data)
-# print(user_list)
+user_list = json.loads(data)
+print(user_list)
 #------------------------------------------------------
 
 
@@ -54,4 +30,30 @@ print("账号:" +user.getAttribute("username") + "  密码:" + user.getAttribute
 #     user_list.append(user)
 
 # print(user_list)
+#------------------------------------------------------
+
+
+
+#------------------------------------------------------
+# #读取CSV文件
+# data = csv.reader(codecs.open("./mycsv.csv","r","utf_8_sig"))
+# user_list = []
+# for line in islice(data,1,None):
+#     user_list.append(line)
+
+# print(user_list)
+#------------------------------------------------------
+
+
+
+#------------------------------------------------------
+# #读取XML文件
+# data =  parse("./myxml.xml")
+# root = data.documentElement
+# print(root.nodeName)
+# user_list = root.getElementsByTagName('login')
+# print(len(user_list))
+# for i in range(0,len(user_list),1):
+#     user = user_list[i]
+#     print("" +user.getAttribute("username") + "       " + user.getAttribute("password"))
 #------------------------------------------------------
