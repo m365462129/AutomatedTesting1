@@ -132,8 +132,13 @@
 
 
 
-
-
+# #------------------------------------------------------------确认框
+# from selenium import webdriver
+# driver = webdriver.Firefox()
+# confirm_win = driver.switch_to_alert()  #切换到确认框. 
+# confirm_win.send_keys("警告框提示语")   
+# confirm_win.dismiss()				    #点击确认框取消按钮
+# confirm_win.accept()				    #点击确认框确定按钮
 
 
 
