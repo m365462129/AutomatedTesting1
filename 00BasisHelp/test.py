@@ -1,8 +1,5 @@
 # -*- coding: UTF-8 -*-
 
-
-
-
 # #--------------------路径
 # import sys
 # from os.path import dirname,abspath
@@ -15,17 +12,6 @@
 # from time import sleep as myselfsleep
 # myselfsleep(2)
 # print("1111111")
-
-
-# #--------------------异常
-# try:
-#     print("开始异常测试")
-#     open("abc.txt","r")
-# except BaseException as msg:
-#     print("-------------------------------------------------------------异常报错了")
-#     print("异常信息:"+msg)
-# finally:
-#     print("不管异常，都会执行这里")
 
 
 # #--------------------字符串操作
@@ -75,3 +61,14 @@
 # dicts.pop("username")#删除键
 
 
+# #--------------------异常
+# raise "111111111111111" #程序员主动抛出异常
+
+# try:
+#     print("开始异常测试")
+#     open("abc.txt","r")
+# except BaseException as msg:
+#     print("-------------------------------------------------------------异常报错了")
+#     print("异常信息:"+msg)
+# finally:
+#     print("不管异常，都会执行这里")
