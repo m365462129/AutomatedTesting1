@@ -1,6 +1,16 @@
 # -*- coding: UTF-8 -*-
 
 
+
+
+#--------------------路径
+# import sys
+# from os.path import dirname,abspath
+# file_path = abspath(__file__)#获取当前文件的绝对路径
+# print(file_path)
+# print(dirname(file_path))#获取这个文件的上一级目录
+
+
 #--------------------导入的函数起别名
 # from time import sleep as myselfsleep
 # myselfsleep(2)
