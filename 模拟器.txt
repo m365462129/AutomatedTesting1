@@ -1,0 +1,2 @@
+连接逍遥模拟器：
+控制台  "D:\Program Files\Microvirt\MEmu\adb.exe" connect 127.0.0.1:21503
