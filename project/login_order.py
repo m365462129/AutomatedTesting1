@@ -16,6 +16,7 @@ class LoginOrderTestCase(unittest.TestCase):
 
     def tearDown(self):
         print("单个结束")
+        self.driver.close()
         pass
 
     def test_login_order(self):

@@ -24,7 +24,7 @@ if __name__ == '__main__':
         runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title=u"报告",description=u"执行情况",verbosity=2)
         runner.run(suite)
         fp.close()
-        MailUtils.send_test_report()
+        MailUtils.send_report_to_list()
     else:
         suite = create_suite()
         runner = unittest.TextTestRunner(verbosity=1)   
