@@ -10,14 +10,14 @@ from mail import MailUtils
 def create_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(login_order.LoginOrderTestCase))
-    suite.addTest(unittest.makeSuite(category.CategoryTestCase))
+    # suite.addTest(unittest.makeSuite(category.CategoryTestCase))
     return suite
 
 
 if __name__ == '__main__':
 
-    isHtml = True
-    if(isHtml):
+    isResultToHtml = True #测试结果生成HTML
+    if(isResultToHtml):
         suite = create_suite()
         # file_prefix = time.strftime("%Y-%m-%d %H_%M_%S", time.localtime())
         fp = open("./result.html","wb")

@@ -9,7 +9,8 @@ class MailUtils():
 	#表示一个类方法，不需要实例化，可以直接调用
 	@classmethod
 	def send_test_report(cls):
-		#邮件信息配置. 授权码 xdclass123
+		#邮件信息配置. 
+		#365462129@qq.com授权码:mngwlyddaqjfbgcb/kgwxmjkxgbcvbghc
 		sender = '365462129@qq.com'
 		receiver = '1032243432@qq.com'
 		auth_code = 'mngwlyddaqjfbgcb'  #设置客户端授权码，不是密码
