@@ -7,7 +7,7 @@ from email.mime.text import MIMEText
 from time import sleep
 
 class MailUtils():
-	#表示一个类方法，不需要实例化，可以直接调用
+	#表示一个类方法，不需要实例化，可以直接调用,相当于static函数
 	@classmethod
 	def send_test_report(cls):
 		#邮件信息配置. 
