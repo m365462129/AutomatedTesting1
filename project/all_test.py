@@ -5,7 +5,7 @@ import HTMLTestRunner
 import login_order ,category
 
 from mail import MailUtils
-
+from yagmailtool import YanMailTool
 
 def create_suite():
     suite = unittest.TestSuite()
@@ -24,7 +24,8 @@ if __name__ == '__main__':
         runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title=u"报告",description=u"执行情况",verbosity=2)
         runner.run(suite)
         fp.close()
-        MailUtils.send_report_to_list()
+        # MailUtils.send_report_to_list()
+        YanMailTool.send_mail("报告","执行情况",["./result.html"])
     else:
         suite = create_suite()
         runner = unittest.TextTestRunner(verbosity=1)   
