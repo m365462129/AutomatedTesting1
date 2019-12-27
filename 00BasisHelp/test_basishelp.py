@@ -1,6 +1,12 @@
 # -*- coding: UTF-8 -*-
 #
 
+
+
+# #------------------------------------------------------------自动截图
+# driver.get_screenshot_as_file("./error_png.png")
+
+
 # #------------------------------------------------------------鼠标事件
 # from selenium import webdriver
 # from time import sleep
@@ -13,13 +19,33 @@
 
 
 
+# #------------------------------------------------------------1.隐形等待时间
+# from selenium import webdriver
+# from time import sleep
+# driver = webdriver.Firefox()
+# driver.implicitly_wait(10)                      #等待网页加载完成，可设置超时时间
+# driver.get("https://www.baidu.com/")
+# sleep(2)                                        #直接沉睡
+# #------------------------------------------------------------2.显性等待时间
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
+# driver = webdriver.Firefox()
+# driver.get("https://baidu.com")
+# #5秒内每间隔0.5秒检测一次，直到until的条件满足就跳出检测
+# WebDriverWait(driver, 5, 0.5).until(EC.presence_of_element_located((By.ID,"kw")))
+# ##WebDriverWait(driver, 5, 0.5).until_not(EC.presence_of_element_located((By.ID,"kw")))
+# ##隐性等待和显性等待可以同时用，等待的最长时间取两者之中的较大者
+
+
+
 # #------------------------------------------------------------路径
 # import sys
 # from os.path import dirname,abspath
 # file_path = abspath(__file__)#获取当前文件的绝对路径
 # print(file_path)
 # print(dirname(file_path))#获取这个文件的上一级目录
-
 
 
 # #------------------------------------------------------------list
@@ -40,7 +66,6 @@
 # print("4：name is {n}, age is {a}" .format(n="TT",a=25))
 
 
-
 # #------------------------------------------------------------for
 # for i in range(5):
 #     print(str(i))
@@ -53,14 +78,12 @@
 #     print(item)
 
 
-
 # #------------------------------------------------------------字典
 # dicts = {"username":"zhangsan","password":123456}
 # for k,v in dicts.items():
 #     print("key:"+ str(k) + "  value:" + str(v))
 
 # dicts.pop("username")#删除键
-
 
 
 # #------------------------------------------------------------异常
@@ -89,7 +112,6 @@
 # driver.maximize_window()          #设置浏览器窗口为最大尺寸
 
 
-
 # #------------------------------------------------------------选择下拉框
 # from selenium import webdriver
 # from time import sleep
@@ -111,7 +133,6 @@
 # #Select(sel_ele).select_by_visible_text("每页显示20条"):3：选择文本
 
 
-
 # #------------------------------------------------------------浏览器拖动条
 # from selenium import webdriver
 # from time import sleep
@@ -122,18 +143,20 @@
 # driver.execute_script(js)
 
 
-
 # #------------------------------------------------------------Cookie
 # from selenium import webdriver
 # from time import sleep
 # driver = webdriver.Firefox()
 # driver.get("https://www.baidu.com/")
 # driver.add_cookie({"name":"key-aaa","value":"value-aaa"})#增加cookie
+# # driver.add_cookie({"name":"name","value":"jack"})
+# # driver.add_cookie({"name":"token","value":"xdclasseyJhbGciOiJIUzI1NiJ9"})
 # # driver.delete_cookie("key","value")#删除一个cookie
 # # driver.delete_all_cookies()#删除所有cookie
 # cookieList = driver.get_cookies()
 # for item in cookieList:#遍历
 #     print(item["name"]+"=>"+item["value"])
+
 
 
 
