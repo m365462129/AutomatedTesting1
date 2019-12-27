@@ -1,6 +1,17 @@
 # -*- coding: UTF-8 -*-
 #
 
+# #------------------------------------------------------------鼠标事件
+# from selenium import webdriver
+# from time import sleep
+# from selenium.webdriver.common.action_chains import ActionChains
+# driver = webdriver.Firefox()
+# driver.implicitly_wait(10)
+# driver.get("https://www.baidu.com/")
+# setting_ele = driver.find_element_by_css_selector("a.pf:nth-child(8)")
+# ActionChains(driver).move_to_element(setting_ele).perform()
+
+
 
 # #------------------------------------------------------------路径
 # import sys
@@ -65,7 +76,6 @@
 #     print("不管异常，都会执行这里")
 
 
-
 # #------------------------------------------------------------控制浏览器
 # from selenium import webdriver
 # driver = webdriver.Firefox()
@@ -75,11 +85,55 @@
 # driver.refresh()					#浏览器刷新
 # driver.close()					#关闭当前窗口
 # driver.quit()						#退出浏览器
+# driver.set_window_size(300,300)   #设置浏览器窗口大小
+# driver.maximize_window()          #设置浏览器窗口为最大尺寸
 
 
 
+# #------------------------------------------------------------选择下拉框
+# from selenium import webdriver
+# from time import sleep
+# from selenium.webdriver.common.action_chains import ActionChains
+# from selenium.webdriver.support.select import Select
+# driver = webdriver.Firefox()
+# driver.implicitly_wait(10)
+# driver.get("https://www.baidu.com/")
+# setting_ele = driver.find_element_by_css_selector("a.pf:nth-child(8)")
+# ActionChains(driver).move_to_element(setting_ele).perform()
+# sleep(1)
+# driver.find_element_by_css_selector(".setpref").click()
+# sleep(1)
+# sel_ele = driver.find_element_by_id("nr")
+# sel_ele.click()
+# sleep(1)
+# Select(sel_ele).select_by_value("20")#1：选择值
+# #Select(sel_ele).select_by_index(1):2：选择下标
+# #Select(sel_ele).select_by_visible_text("每页显示20条"):3：选择文本
 
 
+
+# #------------------------------------------------------------浏览器拖动条
+# from selenium import webdriver
+# from time import sleep
+# driver = webdriver.Firefox()
+# driver.get("https://www.hao123.com/")
+# sleep(2)
+# js = "window.scrollTo(100,450)"#js代码拖动条拖到一个位置
+# driver.execute_script(js)
+
+
+
+# #------------------------------------------------------------Cookie
+# from selenium import webdriver
+# from time import sleep
+# driver = webdriver.Firefox()
+# driver.get("https://www.baidu.com/")
+# driver.add_cookie({"name":"key-aaa","value":"value-aaa"})#增加cookie
+# # driver.delete_cookie("key","value")#删除一个cookie
+# # driver.delete_all_cookies()#删除所有cookie
+# cookieList = driver.get_cookies()
+# for item in cookieList:#遍历
+#     print(item["name"]+"=>"+item["value"])
 
 
 
