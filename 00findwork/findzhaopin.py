@@ -15,18 +15,12 @@ driver.implicitly_wait(15)
 driver.get("https://www.zhaopin.com/")
 sleep(1)
 
-driver.find_element_by_css_selector(".risk-warning__content > button:nth-child(1)").click()
 
-driver.find_element_by_css_selector(".zp-search__input").send_keys("自动化测试")
+driver.find_element_by_css_selector("body > div.a-modal.risk-warning > div > div > button").click()
 sleep(1)
 
-driver.find_element_by_css_selector(".zp-search").click()
-sleep(5)
-
-print("==0")
+driver.find_element_by_css_selector("#rightNav_top > div > div.zp-search__wrapper > div > div > div.fl.sf-search-box > div > div.a-input.search-box__input > input").send_keys("自动化测试")
 sleep(1)
-print("==1")
 
-tmp_ele = driver.find_element_by_css_selector("div.query-others__title:nth-child(2) > div:nth-child(1)")
-# # tmp_ele = driver.find_element_by_xpath("html body div#root div.zp.default div.zp__container div#search.query-search div.query-search__border div.query-search__border__content div.query-others div.query-others__title div.query-others__title__item")
-ActionChains(driver).move_to_element(tmp_ele).perform()
+driver.find_element_by_css_selector("#rightNav_top > div > div.zp-search__wrapper > div > div > div.fl.sf-search-box > div > button").click()
+sleep(2)
