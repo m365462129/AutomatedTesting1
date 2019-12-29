@@ -40,7 +40,7 @@ driver.find_element_by_partial_link_text("文本链接")
 driver.find_element_by_xpath("/html/body/div/div[2]/div/div/div/from/span/input")
 driver.find_element_by_xpath("/html/body/div/div[2]/div/div/div/from/span[2]/input")
 
-# 2、利用元素属性定位
+# 2、利用元素属性定位,格式为：//标签[属性=值]
 driver.find_element_by_xpath("//input[@id='kw']")
 driver.find_element_by_xpath("//input[@id='su']")
 driver.find_element_by_xpath("//*[@name='wd']")
@@ -66,7 +66,7 @@ driver.find_element_by_xpath("//a[text(),'新闻')]")
 driver.find_element_by_xpath("//a[contains(text(),'一个很长的')]")
 
 
-# CSS 定位
+# CSS 定位：“#”代表id；“.”代表class；
 # 1.通过class属性定位
 driver.find_element_by_css_selector(".s_ipt")
 driver.find_element_by_css_selector(".s_btn")
