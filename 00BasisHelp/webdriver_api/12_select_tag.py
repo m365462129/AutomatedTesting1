@@ -19,15 +19,15 @@ sleep(2)
 # 搜索结果显示条数
 sel = driver.find_element_by_xpath("//select[@id='nr']")
 
-# value="20"
+#方式1： value="20"
 Select(sel).select_by_value('20')
 sleep(2)
 
-# <option>每页显示50条</option>
+#方式2： <option>每页显示50条</option>
 Select(sel).select_by_visible_text("每页显示50条")
 sleep(2)
 
-# 根据选项的索引选择
+#方式3： 根据选项的索引选择
 Select(sel).select_by_index(0)
 sleep(2)
 

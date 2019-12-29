@@ -2,44 +2,6 @@
 #
 
 
-
-# #------------------------------------------------------------自动截图
-# driver.get_screenshot_as_file("./error_png.png")
-
-
-# #------------------------------------------------------------鼠标事件
-# from selenium import webdriver
-# from time import sleep
-# from selenium.webdriver.common.action_chains import ActionChains
-# driver = webdriver.Firefox()
-# driver.implicitly_wait(10)
-# driver.get("https://www.baidu.com/")
-# setting_ele = driver.find_element_by_css_selector("a.pf:nth-child(8)")
-# ActionChains(driver).move_to_element(setting_ele).perform()
-
-
-
-# #------------------------------------------------------------1.隐形等待时间
-# from selenium import webdriver
-# from time import sleep
-# driver = webdriver.Firefox()
-# driver.implicitly_wait(10)                      #等待网页加载完成，可设置超时时间
-# driver.get("https://www.baidu.com/")
-# sleep(2)                                        #直接沉睡
-# #------------------------------------------------------------2.显性等待时间
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.support.ui import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as EC
-# driver = webdriver.Firefox()
-# driver.get("https://baidu.com")
-# #5秒内每间隔0.5秒检测一次，直到until的条件满足就跳出检测
-# WebDriverWait(driver, 5, 0.5).until(EC.presence_of_element_located((By.ID,"kw")))
-# ##WebDriverWait(driver, 5, 0.5).until_not(EC.presence_of_element_located((By.ID,"kw")))
-# ##隐性等待和显性等待可以同时用，等待的最长时间取两者之中的较大者
-
-
-
 # #------------------------------------------------------------路径
 # import sys
 # from os.path import dirname,abspath
@@ -111,36 +73,6 @@
 # driver.set_window_size(300,300)   #设置浏览器窗口大小
 # driver.maximize_window()          #设置浏览器窗口为最大尺寸
 
-
-# #------------------------------------------------------------选择下拉框
-# from selenium import webdriver
-# from time import sleep
-# from selenium.webdriver.common.action_chains import ActionChains
-# from selenium.webdriver.support.select import Select
-# driver = webdriver.Firefox()
-# driver.implicitly_wait(10)
-# driver.get("https://www.baidu.com/")
-# setting_ele = driver.find_element_by_css_selector("a.pf:nth-child(8)")
-# ActionChains(driver).move_to_element(setting_ele).perform()
-# sleep(1)
-# driver.find_element_by_css_selector(".setpref").click()
-# sleep(1)
-# sel_ele = driver.find_element_by_id("nr")
-# sel_ele.click()
-# sleep(1)
-# Select(sel_ele).select_by_value("20")#1：选择值
-# #Select(sel_ele).select_by_index(1):2：选择下标
-# #Select(sel_ele).select_by_visible_text("每页显示20条"):3：选择文本
-
-
-# #------------------------------------------------------------浏览器拖动条
-# from selenium import webdriver
-# from time import sleep
-# driver = webdriver.Firefox()
-# driver.get("https://www.hao123.com/")
-# sleep(2)
-# js = "window.scrollTo(100,450)"#js代码拖动条拖到一个位置
-# driver.execute_script(js)
 
 
 # #------------------------------------------------------------Cookie
