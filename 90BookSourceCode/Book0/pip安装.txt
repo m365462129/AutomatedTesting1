@@ -4,7 +4,7 @@ pip install parameterized 	#参数化
 pip install ddt		#参数化
 pip install yagmail		#邮件
 pip install poium		#测试库
-
+pip install pytest		#
 
 
 Appium
