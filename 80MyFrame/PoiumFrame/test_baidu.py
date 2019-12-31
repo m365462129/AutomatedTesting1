@@ -13,14 +13,16 @@ class TestBaidu(unittest.TestCase):
         page = BaiduPage(self.driver)
         page.get("https://www.baidu.com")
         page.search_input.send_keys("selenium")
-        page.search_button.click()
+        page.search_btn.click()
         sleep(2)
         self.assertEqual(page.get_title, "selenium_百度搜索")
 
     @classmethod
     def tearDownClass(cls):
+        sleep(6)
         cls.driver.quit()
 
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
+    pass
