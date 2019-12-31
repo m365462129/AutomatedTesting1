@@ -18,6 +18,6 @@ class YanMailTool():
 		yag.send(default_receiverlist,subject,contents,attachment_list)
 
 
-# #Demo
-attachment_list = ["./result.html"]
-YanMailTool.send_mail("主题:测试报告","正文：测试的详情请下载附件",attachment_list)
+# # #Demo
+# attachment_list = ["./result.html"]
+# YanMailTool.send_mail("主题:测试报告","正文：测试的详情请下载附件",attachment_list)
