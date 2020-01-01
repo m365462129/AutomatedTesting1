@@ -13,7 +13,7 @@ isUse_yagmail = True  #yagmail插件发送邮件
 def create_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(test_login_order.TestLoginOrder))
-    suite.addTest(unittest.makeSuite(test_category.TestCategory))
+    # suite.addTest(unittest.makeSuite(test_category.TestCategory))
     return suite
 
 
@@ -22,7 +22,7 @@ if __name__ == '__main__':
         suite = create_suite()
         file_prefix = time.strftime("%Y%m%d%H%M%S", time.localtime())
         result_path = "./testresult/"+ file_prefix +"result.html"
-        result_title = "报告"
+        result_title = file_prefix + "报告"
         result_des = "执行情况"
 
         fp = open(result_path,"wb")

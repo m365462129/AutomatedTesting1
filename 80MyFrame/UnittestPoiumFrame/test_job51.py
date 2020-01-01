@@ -8,17 +8,33 @@ class TestJob51(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome()
+        cls.driver.implicitly_wait(10)
 
     def test_baidu_search_case1(self):
         page = UIPage(self.driver)
         page.get("https://www.51job.com")
-        page.search_input.send_keys("selenium")
+        sleep(1)
+        page.search_input.send_keys("自动化测试")
+        sleep(1)
         page.search_btn.click()
+        sleep(1)
+        page.zhankai_btn.click()
+        sleep(1)
+        page.jiagezhankai_btn.click()
+        sleep(1)
+
+        jiage_list = page.getjiage_list()
+        for item in jiage_list:
+            item.click()
+
+        sleep(1)
+        page.jiageok_btn.click()
 
     @classmethod
     def tearDownClass(cls):
-        sleep(6)
-        cls.driver.quit()
+        # sleep(6)
+        # cls.driver.quit()
+        print("----end")
         pass
 
 
