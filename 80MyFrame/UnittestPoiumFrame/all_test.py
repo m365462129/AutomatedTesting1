@@ -2,10 +2,13 @@
 import unittest
 import time
 import HTMLTestRunner
-import test_login_order,test_category
-
 # from mail import MailUtils
 from yagmailtool import YanMailTool
+import test_login_order,test_category
+
+
+isResultToHtml = True #测试结果生成HTML
+isUse_yagmail = True  #yagmail插件发送邮件
 
 def create_suite():
     suite = unittest.TestSuite()
@@ -15,8 +18,6 @@ def create_suite():
 
 
 if __name__ == '__main__':
-    isResultToHtml = True #测试结果生成HTML
-    isUse_yagmail = True 
     if(isResultToHtml):
         suite = create_suite()
         file_prefix = time.strftime("%Y%m%d%H%M%S", time.localtime())
