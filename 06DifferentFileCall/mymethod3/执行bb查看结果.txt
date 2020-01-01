@@ -1,0 +1,6 @@
+1.每个文件夹下面都加__init__.py，里面可以是空的内容
+2.在你要执行的py文件里面编写：
+	import sys
+	from os.path import dirname,abspath
+	sys.path.append(dirname(dirname(abspath(__file__))))#将项目的目录加入到路径
+	print("--this path =" + str(sys.path))
