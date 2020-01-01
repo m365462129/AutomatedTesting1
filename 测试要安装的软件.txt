@@ -1,0 +1,40 @@
+JDK8以上
+Fiddler
+模拟器
+
+自动化测试：
+VS code/PyCharm
+python3以上
+Appium
+Firefox
+Google Chrome
+Android Studio
+
+性能测试：
+jmeter4.0
+Linux
+VMware
+MySQL
+
+-----------------------------------------------------------------------
+Appium连接逍遥模拟器：
+控制台  "D:\Program Files\Microvirt\MEmu\adb.exe" connect 127.0.0.1:21503
+
+------------------------------------------------------------------------
+pip可能要安装的插件
+Web
+pip install parameterized 	#参数化
+pip install ddt		#参数化
+pip install yagmail		#邮件
+pip install poium		#测试库
+
+pip install pytest		#pytest框架
+pip install pytest-html	#生成html
+pip install pytest-rerunfailures#失败重跑
+pip install pytest-timeout	#标记超时
+pip install pytest-parallel	#扩展
+
+Appium
+pip install Appium-Python-Client #Appium客户端
+
+----------------------------------------------------------------------------------
