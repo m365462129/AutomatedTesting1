@@ -1,0 +1,8 @@
+pagefind：网页元素寻找的文件夹
+testresult：测试结果的文件夹
+all_config.py ：配置文件
+global_helper.py：帮助类
+yagmailtool.py：发送邮件的类
+all_test.py：测试的入口
+	
+

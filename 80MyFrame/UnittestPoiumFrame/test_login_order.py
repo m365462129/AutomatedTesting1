@@ -4,6 +4,7 @@ from selenium import webdriver
 from pagefind.login_order_page import LoginOrderPage as UIPage
 
 class TestLoginOrder(unittest.TestCase):
+    """测试标注TestLoginOrder"""
 
     @classmethod
     def setUpClass(cls):
@@ -16,6 +17,7 @@ class TestLoginOrder(unittest.TestCase):
         # cls.driver.quit()
 
     def test_case1(self):
+        """测试标注"""
         page = UIPage(self.driver)
         page.get("https://old.xdclass.net/#/index")
         sleep(1)
