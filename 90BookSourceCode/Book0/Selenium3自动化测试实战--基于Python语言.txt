@@ -54,6 +54,34 @@
 	5.3模块化与参数化
 	5.4读取文件：txt；CSV；XML；JSON
 第六章 unittest单元测试框架
-
+	6.1认识unittest
+	    6.1.1认识测试单元
+	    6.1.2重要的概念
+	    6.1.3断言方法
+	    6.1.4测试用例的组织与discover
+	6.2关于unittest还需要知道的内容
+	    6.2.1测试用例的执行顺序
+	    6.2.2执行多级目录的测试用例
+	    6.2.3跳过测试和预期失败
+	    6.2.4Fixtrue
+第七章 unittest扩展
+	7.1HTML测试报告
+	    7.1.1下载与安装
+	    7.1.2生成HTML测试报告
+	    7.1.3更易读的测试报告
+	7.2数据驱动应用
+	    7.2.1数据驱动
+	    7.2.2Parameterized
+	    7.2.3DDT
+	7.3自动发送邮件
+	    7.3.1Python自带的发送邮件功能
+	    7.3.2用yagmail发送邮件
+	    7.3.3整合自动发送邮件功能
+第八章 Page Object
+	8.1认识Page Object
+	8.2实现Page Object
+	    8.2.1Page Object简单实例
+	    8.2.2改进Page Object封装
+	8.3Poium测试库
 
 		
