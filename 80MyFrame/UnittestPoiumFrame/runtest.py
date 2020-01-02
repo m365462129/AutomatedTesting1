@@ -8,22 +8,23 @@ from mail_tool import MailTool
 from pagecase.test_login_order import TestLoginOrder
 from pagecase.test_category import TestCategory
 from pagecase.test_job51 import TestJob51
-from pagecase.test_parameterized import TestParameterized
+from pagecase.test_parameterized import TestParameterized #数据驱动1
+from pagecase.test_ddt import TestDDT #数据驱动2
 
-
-isResultToHtml = False #测试结果生成HTML
-isUse_yagmail = True  #yagmail插件发送邮件
 
 def create_suite():
     suite = unittest.TestSuite()
     # suite.addTest(unittest.makeSuite(TestLoginOrder))
     # suite.addTest(unittest.makeSuite(TestCategory))
     # suite.addTest(unittest.makeSuite(TestJob51))
-    suite.addTest(unittest.makeSuite(TestParameterized))
+    # suite.addTest(unittest.makeSuite(TestParameterized))
+    suite.addTest(unittest.makeSuite(TestDDT))
     return suite
 
 
 if __name__ == '__main__':
+    isResultToHtml = False  # 测试结果生成HTML
+    isUse_yagmail = True  # yagmail插件发送邮件
     if(isResultToHtml):
         suite = create_suite()
         file_prefix = time.strftime("%Y%m%d%H%M%S", time.localtime())
