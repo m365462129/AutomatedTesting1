@@ -7,3 +7,5 @@
 */geckodriver.log
 
 *.idea/
+
+*testresult/
