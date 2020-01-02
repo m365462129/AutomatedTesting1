@@ -6,12 +6,21 @@ from .job51_page import Job51Page as UIPage
 
 
 class TestJob51(unittest.TestCase):
+    """前程无忧51job"""
 
     @classmethod
     def setUpClass(cls):
         cls.driver = Helper.getdriver()
 
-    def test_baidu_search_case1(self):
+    @classmethod
+    def tearDownClass(cls):
+        # sleep(2)
+        # cls.driver.quit()
+        print("----end")
+        pass
+
+    def test_case(self):
+        """test_case"""
         page = UIPage(self.driver)
         page.get("https://www.51job.com")
         sleep(1)
@@ -30,13 +39,6 @@ class TestJob51(unittest.TestCase):
 
         sleep(1)
         page.jiageok_btn.click()
-
-    @classmethod
-    def tearDownClass(cls):
-        # sleep(6)
-        # cls.driver.quit()
-        print("----end")
-        pass
 
 
 if __name__ == '__main__':

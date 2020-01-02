@@ -13,8 +13,8 @@ class TestLoginOrder(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        sleep(6)
-        # cls.driver.quit()
+        sleep(2)
+        cls.driver.quit()
 
     def test_case1(self):
         """测试标注"""
