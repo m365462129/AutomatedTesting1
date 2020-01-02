@@ -15,9 +15,9 @@ isUse_yagmail = True  #yagmail插件发送邮件
 
 def create_suite():
     suite = unittest.TestSuite()
-    suite.addTest(unittest.makeSuite(TestLoginOrder))
-    suite.addTest(unittest.makeSuite(TestCategory))
-    # suite.addTest(unittest.makeSuite(TestJob51))
+    # suite.addTest(unittest.makeSuite(TestLoginOrder))
+    # suite.addTest(unittest.makeSuite(TestCategory))
+    suite.addTest(unittest.makeSuite(TestJob51))
     return suite
 
 
@@ -37,7 +37,7 @@ if __name__ == '__main__':
         if(isUse_yagmail):
             MailTool.send_mail_by_yagmail(result_title,result_des,[result_path])
         else:
-            pass
+            MailTool.send_mail(result_title,result_des,[result_path])
     else:
         suite = create_suite()
         runner = unittest.TextTestRunner(verbosity=1)   

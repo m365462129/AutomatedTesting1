@@ -1,6 +1,7 @@
 import unittest
 from time import sleep
 from selenium import webdriver
+from .a_helper import Helper
 from .login_order_page import LoginOrderPage as UIPage
 
 class TestLoginOrder(unittest.TestCase):
@@ -8,8 +9,7 @@ class TestLoginOrder(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Chrome()
-        cls.driver.implicitly_wait(10)
+        cls.driver = Helper.getdriver()
 
     @classmethod
     def tearDownClass(cls):
