@@ -4,9 +4,10 @@ import yagmail
 import pagecase.a_helper as Helper
 
 
-class YanMailTool():
+class MailTool():
+
 	@classmethod
-	def send_mail(cls, subject, contents, attachment_list):
+	def send_mail_by_yagmail(cls, subject, contents, attachment_list):
 		# sender = "1032243432@qq.com"
 		# auth_code = "zrvhzhacmawtbbcc"
 		# smtpserver = "smtp.qq.com"

@@ -3,7 +3,7 @@ import unittest
 import time
 import HTMLTestRunner
 # from mail import MailUtils
-from yagmailtool import YanMailTool
+from mail_tool import MailTool
 
 from pagecase.test_login_order import TestLoginOrder
 from pagecase.test_category import TestCategory
@@ -35,7 +35,7 @@ if __name__ == '__main__':
         fp.close()
 
         if(isUse_yagmail):
-            YanMailTool.send_mail(result_title,result_des,[result_path])
+            MailTool.send_mail_by_yagmail(result_title,result_des,[result_path])
         else:
             pass
     else:
