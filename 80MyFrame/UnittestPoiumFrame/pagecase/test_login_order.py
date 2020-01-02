@@ -1,10 +1,10 @@
 import unittest
 from time import sleep
 from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
-from pagefind.category_page import CategoryPage as UIPage
+from .login_order_page import LoginOrderPage as UIPage
 
-class TestCategory(unittest.TestCase):
+class TestLoginOrder(unittest.TestCase):
+    """测试标注TestLoginOrder"""
 
     @classmethod
     def setUpClass(cls):
@@ -13,15 +13,17 @@ class TestCategory(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        sleep(3)
-        cls.driver.close()
+        sleep(6)
+        # cls.driver.quit()
 
     def test_case1(self):
+        """测试标注"""
         page = UIPage(self.driver)
         page.get("https://old.xdclass.net/#/index")
         sleep(1)
-        ActionChains(self.driver).move_to_element(page.menu_ele).perform()
-        sleep(2)
+        page.video_ele.click()
+        sleep(1)
+        page.buy_btn.click()
 
 
 if __name__ == '__main__':

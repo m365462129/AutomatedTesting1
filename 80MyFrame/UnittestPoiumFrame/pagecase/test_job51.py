@@ -1,14 +1,15 @@
 import unittest
 from time import sleep
-from global_helper import GlobalHelper
-from pagefind.job51_page import Job51Page as UIPage
+from selenium import  webdriver
+from .a_helper import Helper
+from .job51_page import Job51Page as UIPage
 
 
 class TestJob51(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.driver = GlobalHelper.getdriver()
+        cls.driver = Helper.getdriver()
 
     def test_baidu_search_case1(self):
         page = UIPage(self.driver)

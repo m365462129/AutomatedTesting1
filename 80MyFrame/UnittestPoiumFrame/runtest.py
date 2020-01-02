@@ -4,7 +4,10 @@ import time
 import HTMLTestRunner
 # from mail import MailUtils
 from yagmailtool import YanMailTool
-import test_login_order,test_category
+
+from pagecase.test_login_order import TestLoginOrder
+from pagecase.test_category import TestCategory
+from pagecase.test_job51 import TestJob51
 
 
 isResultToHtml = True #测试结果生成HTML
@@ -12,8 +15,9 @@ isUse_yagmail = True  #yagmail插件发送邮件
 
 def create_suite():
     suite = unittest.TestSuite()
-    suite.addTest(unittest.makeSuite(test_login_order.TestLoginOrder))
-    # suite.addTest(unittest.makeSuite(test_category.TestCategory))
+    suite.addTest(unittest.makeSuite(TestLoginOrder))
+    suite.addTest(unittest.makeSuite(TestCategory))
+    # suite.addTest(unittest.makeSuite(TestJob51))
     return suite
 
 
