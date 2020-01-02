@@ -1,8 +1,7 @@
-pagefind：网页元素寻找的文件夹
+pagecase：网页逻辑的文件夹
 testresult：测试结果的文件夹
-all_config.py ：配置文件
-global_helper.py：帮助类
-yagmailtool.py：发送邮件的类
-all_test.py：测试的入口
+pagecase/a_helper.py：帮助类
+mail_tool.py：发送邮件的类
+runtest.py：测试的入口
 	
 
