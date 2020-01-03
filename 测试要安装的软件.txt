@@ -37,4 +37,9 @@ pip install pytest-parallel	#扩展
 Appium
 pip install Appium-Python-Client #Appium客户端
 
+
+Airtest
+pip install Airtest
+pip install poco
+brew cask install android-sdk 
 ----------------------------------------------------------------------------------
