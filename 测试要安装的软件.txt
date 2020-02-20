@@ -34,6 +34,8 @@ pip install pytest-rerunfailures#失败重跑
 pip install pytest-timeout	#标记超时
 pip install pytest-parallel	#扩展
 
+pip install requests                  #接口测试模块
+
 Appium
 pip install Appium-Python-Client #Appium客户端
 
