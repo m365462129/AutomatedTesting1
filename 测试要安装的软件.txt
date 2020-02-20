@@ -36,7 +36,7 @@ pip install pytest-parallel	#扩展
 
 pip install requests                  #接口测试模块
 
-pip --default-timeout=100 install gevent#python升级慢或者升级失败
+pip --default-timeout=100 install gevent#pip升级慢或者升级失败
 
 Appium
 pip install Appium-Python-Client #Appium客户端
