@@ -34,6 +34,8 @@ pip install pytest-rerunfailures#失败重跑
 pip install pytest-timeout	#标记超时
 pip install pytest-parallel	#扩展
 
+pip install ddt                          #ddt数据驱动
+
 pip install requests                  #接口测试模块
 
 pip --default-timeout=100 install gevent#pip升级慢或者升级失败
