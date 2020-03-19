@@ -1,0 +1,6 @@
+InterfaceFrame1
+1.框架比较简单，每个接口写一个脚本，在代码里面配置数据
+2.直接执行可以得出测试报告
+
+InterfaceFrame2
+
