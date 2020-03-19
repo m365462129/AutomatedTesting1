@@ -14,13 +14,14 @@ class TestLaoHuangLi(unittest.TestCase):
     @parameterized.expand([
         ("http://v.juhe.cn/laohuangli/d", "get",{'key':'b53b3ef09b2d4180a2af64ec761760e7','date':'2018-06-06'}),
         ("http://v.juhe.cn/laohuangli/d", "get",{'key':'b53b3ef09b2d4180a2af64ec761760e7','date':'2018-06-07'}),
-        ("http://v.juhe.cn/laohuangli/d", "get",{'key':'b53b3ef09b2d4180a2af64ec761760e7','date':'2018-06-08'}),
+        ("http://v.juhe.cn/laohuangli/d", "get",{'key':'b53b3ef09b2d4180a2af64ec761760e7P','date':'2018-06-08'}),
     ])
-    def test_laohuanglijiekou(self,url,method,params):
+    def test_lao(self,url,method,params):
         self.goreq(url,method,params)
         pass
 
     def goreq(self,url,method,params):
+        
         method = method.lower()
         if method == "get":
             req = requests.get(url=url,params=params)
@@ -35,9 +36,6 @@ class TestLaoHuangLi(unittest.TestCase):
         else:
             self.assertEqual(res["error_code"],0,res["reason"])
         
-
-        
-
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
