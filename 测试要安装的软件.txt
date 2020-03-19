@@ -1,3 +1,4 @@
+环境安装-----------------------------------------------------------------------
 JDK8以上
 Fiddler
 模拟器
@@ -16,36 +17,30 @@ Linux
 VMware
 MySQL
 
------------------------------------------------------------------------
+模拟器-----------------------------------------------------------------------
 Appium连接逍遥模拟器：
 控制台  "D:\Program Files\Microvirt\MEmu\adb.exe" connect 127.0.0.1:21503
 
-------------------------------------------------------------------------
-pip可能要安装的插件
+pip安装库------------------------------------------------------------------------
 Web
 pip install parameterized 	#参数化
-pip install ddt		#参数化
-pip install yagmail		#邮件
+pip install ddt		#参数化，ddt数据驱动
+pip install yagmail		#自动发送邮件
 pip install poium		#测试库
+pip install requests                  #接口自动化测试
+pip --default-timeout=100 install gevent#pip升级慢或者升级失败
 
+pytest----------------------------------------------------------------------------------	
 pip install pytest		#pytest框架
 pip install pytest-html	#生成html
-pip install pytest-rerunfailures#失败重跑
+pip install pytest-rerunfailures  #失败重跑
 pip install pytest-timeout	#标记超时
 pip install pytest-parallel	#扩展
 
-pip install ddt                          #ddt数据驱动
-
-pip install requests                  #接口测试模块
-
-pip --default-timeout=100 install gevent#pip升级慢或者升级失败
-
-Appium
+Appium----------------------------------------------------------------------------------
 pip install Appium-Python-Client #Appium客户端
 
-
-Airtest
+Airtest----------------------------------------------------------------------------------
 pip install Airtest
 pip install poco
 brew cask install android-sdk 
-----------------------------------------------------------------------------------
