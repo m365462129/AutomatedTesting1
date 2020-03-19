@@ -3,7 +3,7 @@
 #---------------------------------------基本配置
 test_dir = './test_case'     # 用例目录
 report_dir = './test_report/'# 报告目录
-isResultToHtml = False       # 测试结果生成HTML
+isResultToHtml = True       # 测试结果生成HTML
 
 
 #---------------------------------------Email相关配置
