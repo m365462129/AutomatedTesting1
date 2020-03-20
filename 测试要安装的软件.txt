@@ -23,13 +23,17 @@ Appium连接逍遥模拟器：
 
 pip安装库------------------------------------------------------------------------
 Web
-pip install parameterized 	#参数化
-pip install ddt		#参数化，ddt数据驱动
-pip install yagmail		#自动发送邮件
-pip install poium		#测试库
-pip install requests                  #接口自动化测试
-pip install xlrd                           #第三方库读取Excel
-pip --default-timeout=100 install gevent#pip升级慢或者升级失败
+pip install parameterized 			#参数化
+pip install ddt				#参数化，ddt数据驱动
+pip install yagmail				#自动发送邮件
+pip install poium				#测试库
+pip install requests                  			#接口自动化测试
+pip install xlrd                           		#第三方库读取Excel
+python -m pip install --upgrade pip		#升级pip
+python -m pip install -U --force-reinstall pip	#升级pip
+pip install --user --upgrade pip		#升级pip
+python -m pip install --upgrade pip -i https://pypi.douban.com/simple#国内源更新pip
+pip --default-timeout=100 install gevent	#pip升级慢或者升级失败
 
 
 
