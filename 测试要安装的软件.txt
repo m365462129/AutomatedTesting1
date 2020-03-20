@@ -33,12 +33,15 @@ pip install xlrd                           		#第三方库读取Excel
 pip install paramunittest			#unittest框架的参数化
 pip --default-timeout=100 install gevent	#pip升级慢或者升级失败，设置超时为100秒
 
+pip安装库国内下载------------------------------------------------------------------------
 因为去pip下载第三方库很慢甚至不成功，想快就要更换国内服下载
-清华：https://pypi.tuna.tsinghua.edu.cn/simple
-阿里云：http://mirrors.aliyun.com/pypi/simple/
-豆瓣：http://pypi.douban.com/simple/
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple poium
-python -m pip install --upgrade pip -i https://pypi.douban.com/simple
+清华链接：https://pypi.tuna.tsinghua.edu.cn/simple
+阿里云链接：http://mirrors.aliyun.com/pypi/simple/
+豆瓣链接：http://pypi.douban.com/simple/
+格式：pip install requests -i 国内链接
+pip install paramunittest -i https://pypi.douban.com/simple				#安装
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple poium				#安装
+python -m pip install --upgrade pip -i https://pypi.douban.com/simple		#升级
 python -m pip install --upgrade setuptools -i https://pypi.douban.com/simple
 
 
