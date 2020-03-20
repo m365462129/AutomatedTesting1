@@ -4,6 +4,7 @@ from xlrd import open_workbook
 
 class readExcel():
     def get_xls(self, xls_name, sheet_name):
+        # print("你要读取的Excel名称为：{}, Sheet名为：{}".format(xls_name,sheet_name))
         datalist = []
         xlsPath = os.path.join(Helper.project_abspath,Helper.test_data_dir,xls_name)
         file = open_workbook(xlsPath)
@@ -19,7 +20,6 @@ class readExcel():
 
     def get_default_xls(self):
         return readExcel().get_xls(Helper.xls_name, Helper.sheet_name)
-
 
 if __name__ == '__main__':
     print(readExcel().get_default_xls())

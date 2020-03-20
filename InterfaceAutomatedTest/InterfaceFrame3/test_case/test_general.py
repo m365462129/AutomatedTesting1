@@ -5,23 +5,19 @@ from parameterized import parameterized
 import paramunittest
 import json
 import readExcel
-
-import os
-if os.name == "nt":
-    os.system("")
+import a_helper as Helper
 
 xls_data = readExcel.readExcel().get_default_xls()
-# print('\033[1;31m' + "---------------------" + '\033[0m')
 # print(xls_data)
 
 @paramunittest.parametrized(*xls_data)
 class TestMy(unittest.TestCase):
     def setUp(self):
-        print('\033[1;31m' + "\n-----------------------------------从这里开始执行一条用例" + '\033[0m')
+        Helper.cur_run_case_index = Helper.cur_run_case_index + 1
+        print('\033[1;31m' + "\n---------------------------------" + "第{}条用例执行情况".format(Helper.cur_run_case_index)  + '\033[0m')
         pass
 
     def tearDown(self):
-        print('\033[1;31m' + "\n-----------------------------------结束一条用例" + '\033[0m')
         pass
 
     def setParameters(self, case_name, url, method,query):
@@ -32,14 +28,15 @@ class TestMy(unittest.TestCase):
 
     def test_my_case(self):
         self.start_req(self.url,self.method,self.query)
+        pass
 
     def start_req(self,url,method,query):
         dict_data = self.get_dic()
-        if True:
-            print('\033[1;33m' + "\n正在执行此条用例:" + self.case_name + '\033[0m')
-            print("请求url=" + self.url)
-            print("请求方式=" + self.method)
-            print("请求参数=" + str(dict_data))
+        
+        print("\n正在执行的用例名为:" + self.case_name)
+        print("请求url=" + self.url)
+        print("请求方式=" + self.method)
+        print("请求参数=" + str(dict_data))
 
         if method == 'get':
             result = requests.get(url=url, params=dict_data)
@@ -47,11 +44,7 @@ class TestMy(unittest.TestCase):
             result = requests.post(url=url, params=dict_data)
 
         print("服务器响应数据：" + result.text)
-        res = json.loads(result.text)
-        if (res["error_code"] == 0):
-            self.assertNotEqual(res["result"],None,"日期输入格式不正确")
-        else:
-            self.assertEqual(res["error_code"],0,res["reason"])
+        self.analysis_results(result)
 
 
     def get_dic(self):
@@ -61,3 +54,11 @@ class TestMy(unittest.TestCase):
         lst_query = urllib.parse.parse_qsl(query)
         dict_par = dict(lst_query)
         return dict_par
+
+    def analysis_results(self,result):
+        dic_res = json.loads(result.text)
+        if (dic_res["error_code"] == 0):
+                self.assertNotEqual(dic_res["result"],None,"日期输入格式不正确")
+        else:
+            self.assertEqual(dic_res["error_code"],0,dic_res["reason"])
+        pass
