@@ -34,6 +34,7 @@ python -m pip install --upgrade pip		#升级pip
 python -m pip install -U --force-reinstall pip	#升级pip
 pip install --user --upgrade pip		#升级pip
 python -m pip install --upgrade pip -i https://pypi.douban.com/simple#国内源更新pip，很快
+python -m pip install --upgrade setuptools	#升级setuptools
 pip --default-timeout=100 install gevent	#pip升级慢或者升级失败
 
 
