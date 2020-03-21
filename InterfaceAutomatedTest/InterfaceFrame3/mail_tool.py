@@ -28,7 +28,8 @@ class MailTool():
 		# #subject:标题；contents：邮件内容；attachment_list：附件列表
 		yag = yagmail.SMTP(user=sender, password=auth_code, host=smtpserver)
 		yag.send(receiverlist, subject, contents, attachment_list)
-		print ("---------------yagmail发送邮件完成,此次测试结束----------------------------------")
+		# print ("---------------yagmail发送邮件完成,此次测试结束----------------------------------")
+		# print('\033[1;31m' + '--yagmail发送邮件完成,此次测试结束--测试报告:'+ ''+ '\033[0m')
 
 
 	@classmethod

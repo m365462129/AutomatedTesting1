@@ -20,8 +20,9 @@ def create_suite():
             suite.addTests(test_case)
             totalcount = totalcount + 1
     
-
-    printText = "\n此次要执行的用例代码为：{}, 用例数量为{}条".format(test_dir +"/"+ test_pattern,str(totalcount))
+    daimapath = test_dir +"/"+ test_pattern#代码路径
+    datafilepath = Helper.test_data_dir + "/" + Helper.xls_name + "的" + Helper.sheet_name
+    printText = "\n\n\n此次要执行的用例代码为:{},数据文件为:{}, 用例数为{}条".format(daimapath,datafilepath,str(totalcount))
     print('\033[1;31m' + printText + '\033[0m')
     return suite
 
@@ -31,7 +32,7 @@ if __name__ == '__main__':
     if(Helper.isResultToHtml):
         now_time = time.strftime("%Y-%m-%d %H_%M_%S")
         test_report_file_name = Helper.report_dir + now_time + '_result.html'
-        result_title = "接口测试报告"
+        result_title = "接口测试报告:"
         result_des = "请查看详细内容"
 
         fp = open(test_report_file_name,"wb")
@@ -41,9 +42,14 @@ if __name__ == '__main__':
 
         if (Helper.isAutoSendEmail):
             MailTool.send_mail_by_yagmail(result_title,result_des,[test_report_file_name])
+            printText = "此次测试结束，已自动发送邮件，可查收邮件或本地测试报告"+test_report_file_name
+            print('\033[1;31m' + printText + '\033[0m')
         else:
-            print("你关闭了自动发送邮件，不能发送邮件")
+            printText = "此次测试结束，你关闭了自动发送邮件，请查看本地测试报告"+test_report_file_name
+            print('\033[1;31m' + printText + '\033[0m')
             pass
     else:
         runner = unittest.TextTestRunner(verbosity=1)   
         runner.run(suite)
+        printText = "----此次测试结束,以上为执行的详细信息"
+        print('\033[1;31m' + printText + '\033[0m')
