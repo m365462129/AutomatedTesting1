@@ -27,8 +27,3 @@ cur_run_case_index = 0#当前执行的用例数量
 #     os.system("")
 # print('\033[1;31m' + text + '\033[0m')
 # print('\033[1;33m' + text + '\033[0m')
-# def print_error(text):
-#     print('\033[1;31m' + text + '\033[0m')
-# def print_warning(text):
-#     print('\033[1;33m' + text + '\033[0m')
-
