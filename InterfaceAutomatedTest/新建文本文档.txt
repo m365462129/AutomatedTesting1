@@ -4,3 +4,13 @@ InterfaceFrame1
 
 InterfaceFrame2
 
+
+InterfaceFrame3
+1.执行用例在Excel里面配置
+2.路径，开关，邮件等信息在代码里面配置
+
+InterfaceFrame4：推荐
+1.执行用例在Excel里面配置
+2.路径，开关，邮件也在Excel里面配置
+
+

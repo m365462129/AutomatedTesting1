@@ -7,7 +7,6 @@ class readExcel():
     def __init__(self):
         xlsname = 'runtest.xlsx'
         sheetname = 'Sheet1'
-        datalist = []
         xlsPath = os.path.join(Helper.project_abspath,xlsname)
         file = open_workbook(xlsPath)
         sheet = file.sheet_by_name(sheetname)
@@ -24,13 +23,27 @@ class readExcel():
                     Helper.report_dir = "./" + data[7] + "/"
                     Helper.isResultToHtml = data[8] == 1
                     Helper.isAutoSendEmail = data[9] == 1
+                    #检查路径或文件是否存在
+                    self.checkExists(data[2])
+                    self.checkExists(data[2] + '/' + data[3])
+                    self.checkExists(data[4])
+                    self.checkExists(data[4] + "/" + data[5])
+                    self.checkExists(data[7])
                     return
                 pass
             pass
         pass
-        printText = "----你没有开启测试请检查{}文件的{}配置".format(xlsname,sheetname)
-        print('\033[1;31m' + printText + '\033[0m')
+        print('\033[1;31m' + "----你没有开启任何测试请检查{}文件的{}配置".format(xlsname,sheetname) + '\033[0m')
     pass
+
+    def checkExists(self,_path):
+        if not os.path.exists(_path):
+            print('\033[1;31m' + "----Error不存在文件或文件夹：{}，请检查你的配置".format(_path) + '\033[0m')
+            return False
+        else:
+            return True
+        pass
+
 
     def get_default_xls(self):
         return readExcel().get_xls(Helper.xls_name, Helper.sheet_name)
