@@ -24,8 +24,7 @@ def create_suite():
     pass
     daimapath = test_case_dir +"/"+ test_case_file_name#代码路径
     datafilepath = Helper.test_data_dir + "/" + Helper.xls_name + "的" + Helper.sheet_name
-    printText = "\n\n\n此次要执行的用例代码为:{},数据文件为:{}, 用例数为{}条".format(daimapath,datafilepath,str(totalcount))
-    print('\033[1;31m' + printText + '\033[0m')
+    print('\033[1;31m' + "\n\n\n此次要执行的用例代码为:{},数据文件为:{}, 用例数为{}条".format(daimapath,datafilepath,str(totalcount)) + '\033[0m')
     return suite
 
 
@@ -45,15 +44,12 @@ if __name__ == '__main__':
 
         if (Helper.isAutoSendEmail):
             MailTool.send_mail_by_yagmail(result_title,result_des,[test_report_file_name])
-            printText = "此次测试结束，已自动发送邮件，可查收邮件或本地测试报告"+test_report_file_name
-            print('\033[1;31m' + printText + '\033[0m')
+            print('\033[1;31m' + "此次测试结束，已自动发送邮件，可查收邮件或本地测试报告"+test_report_file_name + '\033[0m')
         else:
-            printText = "此次测试结束，你关闭了自动发送邮件，请查看本地测试报告"+test_report_file_name
-            print('\033[1;31m' + printText + '\033[0m')
-            pass
+            print('\033[1;31m' + "此次测试结束，你关闭了自动发送邮件，请查看本地测试报告"+test_report_file_name + '\033[0m')
+        pass
     else:
         runner = unittest.TextTestRunner(verbosity=1)   
         runner.run(suite)
-        printText = "----此次测试结束,以上为执行的详细信息"
-        print('\033[1;31m' + printText + '\033[0m')
+        print('\033[1;31m' + "----此次测试结束,以上为执行的详细信息" + '\033[0m')
     pass

@@ -2,7 +2,7 @@
 
 
 #---------------------------------------基本配置
-test_case_dir = './test_case235'     # 用例目录
+test_case_dir = './test_case'     # 用例目录
 test_case_file_name = 'test_general.py' #执行的测试用例文件命名规则
 test_data_dir = 'test_data'
 report_dir = './test_report/'# 报告目录
